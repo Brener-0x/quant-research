@@ -1,0 +1,7 @@
+cff-version: 1.2.0
+message: "If you use this research, please cite it as below."
+title: "Brener_0x quant research notes"
+authors:
+  - alias: "Brener_0x"
+repository-code: "https://github.com/Brener-0x/quant-research"
+license: CC-BY-4.0

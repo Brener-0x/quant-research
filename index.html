@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brener_0x Research</title>
+<meta name="description" content="Quantitative research on crypto market microstructure: hypotheses, protocols written before the data, out-of-sample tests, and honest verdicts.">
+<meta name="author" content="Brener_0x">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="top"><div class="in">
+  <a class="brand" href="./">Brener_0x <span>/ research</span></a>
+  <a href="https://github.com/Brener-0x/quant-research">github</a>
+</div></div>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="kicker">Quantitative research</div>
+    <h1>Market microstructure, measured.</h1>
+    <p>Each note starts from a mechanism, writes its test before touching the data, keeps an out-of-sample period sealed until the model is frozen, and reports the verdict as it comes, including when the answer is no.</p>
+  </section>
+
+  <section class="list">
+    <h2>Research notes</h2>
+
+    <a class="item" href="papers/twap-front-running/">
+      <div class="no">01</div>
+      <div>
+        <h3>Front-Running TWAPs on Hyperliquid</h3>
+        <p>A forced, public and signed order flow. Price pressure scales with the TWAP's weight in global volume and lasts exactly as long as it runs. A frozen strategy passed a pre-registered out-of-sample test (t = 4.59), then the edge was arbitraged away within a year: same-side followers went from 14 % to 66 % of signals.</p>
+      </div>
+      <div class="meta">
+        <span class="badge closed">closed · not viable</span><br>
+        Hyperliquid · TWAP<br>market impact · 25 figures
+      </div>
+    </a>
+  </section>
+</main>
+
+<footer class="wrap foot">
+  Brener_0x · All notes are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>: free to reuse with attribution and a link to the original.
+</footer>
+</body>
+</html>
