@@ -39,7 +39,7 @@
     return v.toPrecision(3);
   }
 
-  function textWidth(s, px) { return (s || "").length * px * 0.56; }
+  function textWidth(s, px) { return (s || "").length * px * 0.62; }
 
   function panel(container, ax, twin) {
     const card = document.createElement("div");
@@ -53,14 +53,24 @@
     // margins
     const yLabels = (ax.yt || []).map(t => t[1]);
     const maxY = Math.max(0, ...yLabels.map(s => textWidth(s, 11)));
-    const left = Math.min(200, Math.max(44, maxY + 18)) + (ax.yl ? 16 : 0);
+    let left = Math.min(240, Math.max(44, maxY + 18)) + (ax.yl ? 16 : 0);
     const right = twin ? 52 : 14;
-    const top = 12, bottom = ax.xl ? 46 : 30;
-    const x0 = left, x1 = W - right, y0 = H - bottom, y1 = top;
+    // long category labels on x: rotate them and reserve room below and on the left
+    const xin0 = v => v >= Math.min(...ax.xlim) - 1e-9 && v <= Math.max(...ax.xlim) + 1e-9;
+    const xt0 = (ax.xt || []).filter(t => xin0(t[0]));
+    const maxXW = Math.max(0, ...xt0.map(t => textWidth(t[1], 10.5)));
+    const slot = (W - left - right) / Math.max(1, xt0.length);
+    const longX = maxXW > slot - 6;
+    const COS = 0.82, SIN = 0.57;
+    if (longX) left = Math.max(left, Math.min(220, maxXW * COS - slot / 2 + 10));
+    const extra = longX ? Math.round(maxXW * SIN) : 0;
+    const Hl = H + extra;
+    const top = 12, bottom = (ax.xl ? 46 : 30) + extra;
+    const x0 = left, x1 = W - right, y0 = Hl - bottom, y1 = top;
     const sx = scale(ax.xs, ax.xlim, x0, x1, ax.xsp);
     const sy = scale(ax.ys, ax.ylim, y0, y1, null);
 
-    const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, class: "chart", role: "img", "aria-label": ax.titre || "chart" });
+    const svg = el("svg", { viewBox: `0 0 ${W} ${Hl}`, class: "chart", role: "img", "aria-label": ax.titre || "chart" });
     const clipId = "c" + Math.random().toString(36).slice(2, 9);
     const defs = el("defs", {}, svg);
     el("rect", { x: x0, y: y1, width: x1 - x0, height: y0 - y1 }, el("clipPath", { id: clipId }, defs));
@@ -69,13 +79,12 @@
     const gGrid = el("g", { class: "grid" }, svg);
     const xin = v => v >= Math.min(...ax.xlim) - 1e-9 && v <= Math.max(...ax.xlim) + 1e-9;
     const yin = (v, lim) => v >= Math.min(...lim) - 1e-9 && v <= Math.max(...lim) + 1e-9;
-    let xt = (ax.xt || []).filter(t => xin(t[0]));
-    const longX = xt.some(t => textWidth(t[1], 10.5) > (x1 - x0) / Math.max(1, xt.length) - 4);
+    const xt = xt0;
     xt.forEach(t => {
       const X = sx(t[0]);
       el("line", { x1: X, x2: X, y1: y1, y2: y0, class: "gl" }, gGrid);
-      const tx = el("text", { x: X, y: y0 + 15, class: "tick", "text-anchor": longX ? "end" : "middle" }, svg);
-      if (longX) tx.setAttribute("transform", `rotate(-28 ${X} ${y0 + 12})`);
+      const tx = el("text", { x: longX ? X + 3 : X, y: y0 + 15, class: "tick", "text-anchor": longX ? "end" : "middle" }, svg);
+      if (longX) tx.setAttribute("transform", `rotate(-35 ${X + 3} ${y0 + 12})`);
       tx.textContent = t[1];
     });
     (ax.yt || []).filter(t => yin(t[0], ax.ylim)).forEach(t => {
@@ -86,7 +95,7 @@
     });
     el("rect", { x: x0, y: y1, width: x1 - x0, height: y0 - y1, class: "frame" }, svg);
     if (ax.xl) {
-      const l = el("text", { x: (x0 + x1) / 2, y: H - 6, class: "alabel", "text-anchor": "middle" }, svg);
+      const l = el("text", { x: (x0 + x1) / 2, y: Hl - 6, class: "alabel", "text-anchor": "middle" }, svg);
       l.textContent = ax.xl;
     }
     if (ax.yl) {
@@ -139,6 +148,7 @@
         } else if (s.t === "txt") {
           const X = s.axe ? x0 + s.x * (x1 - x0) : sxx(s.x), Y = s.axe ? y0 - s.y * (y0 - y1) : syy(s.y);
           const t = el("text", { x: s.ha === "center" ? X : X + 2, y: Y + (s.va === "center" ? 3.5 : s.va === "bottom" ? -2 : 0), class: "ann", style: s.c && s.c !== "#a3a8ae" ? "fill:" + s.c : null, "text-anchor": s.ha === "right" ? "end" : s.ha === "center" ? "middle" : "start" }, svg);
+          if (s.ha !== "center" && s.ha !== "right" && X + 2 + textWidth(s.s, 10) > W - 2) { t.setAttribute("x", W - 2); t.setAttribute("text-anchor", "end"); }
           t.textContent = s.s;
         }
       });
