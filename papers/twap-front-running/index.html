@@ -113,7 +113,7 @@
 <p>A TWAP is submitted as an action <code>{"type":"twapOrder","twap":{"a":coin,"b":isBuy,"s":size,"r":reduceOnly,"m":minutes,"t":randomize}}</code>. The exchange then sends one taker child order every 30 seconds for <code>m</code> minutes; each child fill carries the <code>twapId</code>, and a <code>twapCancel</code> action can stop it. The children print in the public trade feed with a null transaction hash, which makes them identifiable in real time (Section 9).</p>
 <p>The in-sample inventory: <strong>67.0 million TWAP fills, 448,836 TWAPs, 14,948 wallets, 474 coins, 41.86 billion dollars</strong>. Every TWAP fill is a taker fill and every TWAP trades one side only. Most are small (median 5,700 dollars over 10 minutes), but the 56,312 TWAPs above 100,000 dollars carry 88 % of the notional, and the 7,831 above one million carry 53 % and represent a median 14 % of their coin's volume while they run. 91 % of the notional goes to coins with an external reference market (BTC 11.8 billion, ETH 5.5, HYPE 4.8, SOL 2.5), where a TWAP weighs almost nothing (median share of volume 0.04 % on BTC). 65 % of TWAPs open a position. The 20 largest wallets account for a third of the notional and are not the arbitrageurs of angle 1.</p>
 
-<figure class="fig" data-fig="c33_twap_inventaire">
+<figure class="fig" data-fig="fig01">
   <figcaption><b>Figure 1.</b> Inventory over 150 in-sample days. Size is heavy-tailed (top left, log-log survival); 90 % of TWAPs last under 104 minutes (top right); notional is dominated by perps with an external reference (bottom left); a minority of TWAPs weigh more than a third of their market while running (bottom right).</figcaption>
 </figure>
 
@@ -122,20 +122,20 @@
 <p>First measurement: TWAPs of at least 100,000 dollars, entry one second after the first slice, fixed horizons. The criterion (written before) was a move of at least 9 bp at 30 minutes (the round-trip taker fee), \(t \ge 3\), and a random control (same coin, same day, random time and side) within 2 bp of zero.</p>
 <p>It passed comfortably: <strong>+9.7 bp at 5 minutes and +13.9 bp at 30 minutes (t = 18.6)</strong> on externally referenced coins, +9.8 bp (t = 4.1) on the others, controls at &minus;0.5 and +1.0. The drift grows with size and with the TWAP's weight in its market (from +6.7 bp in the lightest quartile to +21.5 bp in the heaviest), and is stable over the five months. On BTC, ETH and SOL it stays below fees: the global market is too deep.</p>
 
-<figure class="fig" data-fig="c34_twap_pression">
+<figure class="fig" data-fig="fig02">
   <figcaption><b>Figure 2.</b> Naive drift after the first slice of TWAPs above 100,000 dollars. The dashed line is the 9 bp round-trip fee. The weight panel uses the volume observed <em>during</em> the TWAP, unknown at entry.</figcaption>
 </figure>
 
 <p>Two biases inflate this number. <strong>Look-ahead on size</strong>: "above 100,000 dollars" is only known once the TWAP is over, and a TWAP cancelled early leaves the sample. <strong>First-slice impact</strong>: the entry price is often a bar from before the first slice. We re-ran the test on every TWAP with at least two slices, with no size filter, entering after the <em>second</em> slice (nothing to predict), with classes defined only by what is known at entry: slice size, the wallet's history (new wallet, previous TWAPs but none large, at least one previous TWAP above 100,000 dollars) and the reference class. We added a momentum control: TWAPs might simply be launched after the price has already moved their way.</p>
 <p>The biases were real. Without information from the future, the drift on referenced coins falls to <strong>+4.8 bp (t = 7.7)</strong>; the best class known at entry makes +8.8 bp, still below fees. Only 2 classes out of 24 pass, both on coins without an external reference and both carried by tiny markets (a few spot pairs and small HIP-3 listings at +90 to +200 bp), while large HIP-3 index and commodity markets in the same classes do nothing. We also learned that large TWAPs on referenced coins start after a <strong>+22.5 bp</strong> move in their direction over the previous 30 minutes.</p>
 
-<figure class="fig" data-fig="c35_twap_controles">
+<figure class="fig" data-fig="fig03">
   <figcaption><b>Figure 3.</b> The same drift with information available at entry. Top: path by entry time and controls. Bottom: classes defined at entry (slice size and wallet history); bars must clear the 9 bp line.</figcaption>
 </figure>
 
 <p>Execution then settles the small-market case. At prices actually paid, with each coin's fee, the two passing classes make +2.05 bp (t = 2.05) and +2.89 bp (t = 0.71), both negative once the single best coin is removed. The large HIP-3 markets lose 13 to 20 bp, the gains come from a handful of illiquid books where spreads are 15 to 37 bp, and no spread filter isolates a reliable pocket.</p>
 
-<figure class="fig" data-fig="c36_twap_execution">
+<figure class="fig" data-fig="fig04">
   <figcaption><b>Figure 4.</b> Small markets at executable prices. The average is a bet on one or two coins, not a rule. Bottom right: distribution of the spread paid at entry (symlog axis).</figcaption>
 </figure>
 
@@ -146,13 +146,13 @@
 <p>The criterion was a move and a surplus of at least 10 bp (fees plus about 1 bp of spread) with \(t \ge 3\). It passed in the heaviest class. On referenced coins the gradient is monotone: <strong>&lt;1 %: +2.0 bp, 1&ndash;5 %: +4.4, 5&ndash;20 %: +6.7, &ge;20 %: +11.9 bp</strong> at 30 minutes from the second slice (t = 15.6), +16.8 bp from the first. The surplus is +12.1 bp (t = 15.6): momentum explains nothing. On Hyperliquid a random 20&ndash;40 bp move is followed by +0.4 bp on average, a move above 40 bp by &minus;0.2 bp. Prices do not continue on their own; the TWAP pushes them.</p>
 <p>A monotone response to a normalised size is what the market-impact literature predicts. The empirical square-root law states that a metaorder of size \(Q\) in a market with daily volume \(V\) and volatility \(\sigma\) moves the price by roughly \(Y\sigma\sqrt{Q/V}\)<sup><a href="#r1">1</a></sup>. We do not fit it; we only note that weight, not raw size, is the right normalisation, and that the effect is a dose-response, not a threshold.</p>
 
-<figure class="fig" data-fig="c37_twap_poids">
+<figure class="fig" data-fig="fig05">
   <figcaption><b>Figure 5.</b> Drift by weight estimated at entry, decomposed into the expected momentum and the surplus. Bottom left: on Hyperliquid, a large move is not followed by more of the same. Bottom right: TWAP against matched control at equal prior move.</figcaption>
 </figure>
 
 <p>At executable prices the margin is thin. For weight &ge;20 % on referenced coins, entering at the first slice plus one second gives +12.0 bp gross and <strong>+2.1 bp net</strong> (t = 1.9); entering at the second slice loses (&minus;1.8 bp). Entering one slice earlier is worth +3.9 bp: it is the difference between losing and winning. The fee percentile used by the protocol turned out to include builder fees added by some front-ends, which we would not pay; at the base schedule (9 bp round trip on perps), perps alone make +5.5 bp (t = 5.1), positive in all five months. Spot and HIP-3 lose. This pocket was flagged as exploratory: it was chosen after seeing the result.</p>
 
-<figure class="fig" data-fig="c39_twap_execution_liquides">
+<figure class="fig" data-fig="fig06">
   <figcaption><b>Figure 6.</b> Heavy TWAPs on referenced coins at prices actually paid, 30-minute exit. Grey bars: random control. By coin, the largest global markets lose even when the TWAP is heavy on Hyperliquid.</figcaption>
 </figure>
 
@@ -161,13 +161,13 @@
 <p>A 30-minute exit is arbitrary. We traced the mean path every 30 seconds for two hours, and in units of each TWAP's own duration. For perps with weight &ge;20 %, entering at the first slice: <strong>+12.1 bp at a quarter of the duration, +17.2 at half, +22.0 at three quarters, +24.4 bp at the end (t = 30.2)</strong>, then +21.2 at 1.25&times;, +19.1 at 2&times;, +18.7 at 3&times;. The shape is identical for every duration, and longer TWAPs push further: +17.2 bp at the end for TWAPs under 10 minutes, +27.6 for 10&ndash;30, +34.8 for 30&ndash;120, +61.4 above two hours.</p>
 <p>This is the textbook profile of a metaorder: concave impact while the order executes, a peak at completion, then a partial relaxation to a permanent level. Here the retained fraction is about 0.78 of the peak (19.1 / 24.4 at twice the duration), the same order of magnitude as the two thirds predicted by the fair-pricing argument<sup><a href="#r2">2</a></sup>. The practical consequence is that the exit is dictated by the mechanism, not by an optimisation: the flow stops at the end, and the end sits in the middle of a plateau (0.75 to 1.25 times the duration).</p>
 
-<figure class="fig" data-fig="c40_twap_trajectoire">
+<figure class="fig" data-fig="fig07">
   <figcaption><b>Figure 7.</b> Mean price path after entry. Bottom left, in units of TWAP duration: the peak is always at the end. Bottom right: maximum favourable and adverse excursions over 120 minutes are large (these are volatile coins); the maximum happens before the end in only 25 % of cases.</figcaption>
 </figure>
 
 <p>We then tested selling back to the TWAP itself as a maker during its last quarter (it keeps buying as a taker, so we can earn the spread and pay 1.5 bp instead of 4.5). The pre-registered maker exit passed (+7.0 bp net, t = 9.8), but the simplest variant in the pre-declared list did better: <strong>taker exit right after the last slice, +10.8 bp net (t = 12.7)</strong>. Selling early misses the end of the push, and on a liquid perp the spread earned (about 1 bp) and the 3 bp of fees saved do not compensate. The duration effect is strong: +3.1 bp under 10 minutes, +13.6 for 10&ndash;30, +21.0 for 30&ndash;120, +52.8 above two hours.</p>
 
-<figure class="fig" data-fig="c41_twap_sortie_maker">
+<figure class="fig" data-fig="fig08">
   <figcaption><b>Figure 8.</b> Exit rules. The maker "plateau" rises toward the end of the TWAP (top right), which is the sign that the best exit is the end itself. Bottom right: cumulative distribution of net results (symlog).</figcaption>
 </figure>
 
@@ -175,13 +175,13 @@
 <h2 id="s7"><span class="n">7</span>Reading the order before it trades</h2>
 <p>The <code>twapOrder</code> action carries the size and the duration. Using the public API on 5,680 wallets, we matched 185,998 TWAPs to their announcement. The order is sent <strong>1.49 seconds before the first slice in median</strong> (1.01 s at the 1st percentile, 2.01 s at the 99th), identically in every weight class: the lead is structural. The first slice is a good proxy for the announced weight (median ratio 1.025). 26.6 % of heavy TWAPs do not complete; cancelled ones actually earn more (+22.4 bp against +11.8 bp for completed ones), so cancellations are not a trap. Wallets that hit the API's 2,000-entry history cap (bots) earn much less (+5.5 bp against +16).</p>
 
-<figure class="fig" data-fig="c42_twap_api">
+<figure class="fig" data-fig="fig09">
   <figcaption><b>Figure 9.</b> What the announcement tells us. The 1.5-second lead is the same everywhere; the first slice reveals the announced weight; a quarter of heavy TWAPs stop early, and they are not the losers.</figcaption>
 </figure>
 
 <p>Entering at the announcement, at the best level the first slice will hit, gives +12.2 bp net against +10.8 bp, an <strong>addition of +1.4 bp (t = 18.9)</strong>, concentrated on short TWAPs. The book refills within a second after the first slice. One more number matters: on heavy perps, <strong>21 % of TWAPs have another wallet taking on our side between the announcement and the first slice</strong>, against 11 % in random windows of the same length, with no excess on light TWAPs. Someone already reads the announcements. In the end the option was dropped for a practical reason: the public explorer feed relays only 0.104 % of transactions, so seeing every announcement in time requires running a non-validator node.</p>
 
-<figure class="fig" data-fig="c43_twap_entree_annonce">
+<figure class="fig" data-fig="fig10">
   <figcaption><b>Figure 10.</b> Entering before the first slice. The gain is small and regular; the competition panel (bottom right) is the first trace of other players on this flow.</figcaption>
 </figure>
 
@@ -191,14 +191,14 @@
 <h3>The wallet</h3>
 <p>The bot effect seen through the API cap uses the wallet's whole history, future included. We replaced it with a quantity known at entry: the number of TWAPs the wallet launched in the previous seven days. The result is a clean gradient, not a peak: <strong>0 TWAPs: +33.4 bp; 1&ndash;3: +20.4; 4&ndash;10: +22.7; 11&ndash;30: +10.1; 31&ndash;100: +7.5; 101&ndash;300: +1.3</strong>. It holds at equal duration and in every month. Keeping wallets with at most 30 TWAPs (the middle of the 10&ndash;100 plateau) gives +17.3 bp (t = 10.7) against +5.3 for the rest. A reading consistent with the data: an occasional wallet that launches a heavy TWAP has a reason (information, conviction, a hedge to place) the market has not learned; a bot that launches hundreds is anticipated and absorbed.</p>
 
-<figure class="fig" data-fig="c44_twap_wallets_frequents">
+<figure class="fig" data-fig="fig11">
   <figcaption><b>Figure 11.</b> Net result by the wallet's TWAP count over the previous seven days. The threshold is taken in the middle of a plateau (top right); the effect survives at equal duration (bottom left).</figcaption>
 </figure>
 
 <h3>The market</h3>
 <p>BTC, BNB and SOL lose even with a TWAP weighing 20 % of Hyperliquid's volume. In the selected set, Hyperliquid is a median 7 % of (Hyperliquid + Binance perp) volume. Measuring the weight against global volume changes everything: <strong>\(w_g \ge 5\,\%\): +20.9 bp (t = 16.7), the rest: &minus;0.5 bp</strong>. At equal Hyperliquid weight, what matters is Hyperliquid's share of the market: below 10 %, nothing (+1.9 bp, t = 1.7, for 63 % of the set); 25&ndash;50 %, +20 to +58 bp. The mechanism is the one angle 1 had shown in reverse: arbitrageurs carry the flow to Binance, and the price moves in proportion to the TWAP's share of the world, not of the venue. Combined with the wallet filter: +30.0 bp (t = 12.4) on 7,932 TWAPs.</p>
 
-<figure class="fig" data-fig="c45_twap_poids_mondial">
+<figure class="fig" data-fig="fig12">
   <figcaption><b>Figure 12.</b> Weight in global volume. Bottom left: the 20 most frequent coins sorted by Hyperliquid's share of volume (label); the losers are where Hyperliquid is marginal.</figcaption>
 </figure>
 
@@ -213,21 +213,21 @@
 </ul>
 <p>After R1a, R1b and R2: <strong>5,076 TWAPs, +38.3 bp net (t = 10.4), median +7.0 bp; verification months +27.7 bp (t = 8.5)</strong>, positive in every month. The honest number is the verification one: thresholds chosen on two months flatter those two months.</p>
 
-<figure class="fig" data-fig="c46_twap_raisons">
+<figure class="fig" data-fig="fig13">
   <figcaption><b>Figure 13.</b> Systematic reasons, chosen on selection months and judged on verification months. R1a and R1b hold out of their selection period; R3 and R4 do not.</figcaption>
 </figure>
 
 <h3>Cumulative pressure</h3>
 <p>If the price responds to flow, it should respond to <em>all</em> active same-side TWAPs on the coin, not only ours. The cumulative pressure passed its criterion with a clean dose-response (verification quintiles: +10.0, +18.4, +28.6, +34.6, +50.6 bp), but for 75 % of TWAPs it equals the TWAP's own weight: it mostly restates "heavier means more". The herd effect (other wallets pushing the same way) did not survive verification, while a wallet splitting its order into several TWAPs is simply a bigger actor. Cutting the lightest TWAPs raised the mean but lowered total profit by 24 %, so pressure belongs in sizing, not in a filter.</p>
 
-<figure class="fig" data-fig="c47_twap_pression_cumulee">
+<figure class="fig" data-fig="fig14">
   <figcaption><b>Figure 14.</b> Pressure of all active TWAPs. A dose-response on both periods, but no evidence of a herd beyond the wallet's own split orders.</figcaption>
 </figure>
 
 <h3>Seeing the end without the announcement</h3>
 <p>The exit at the last slice assumes we know the end. Without the announcement, slices are a clock: the median gap is 30.0 s and the 99th percentile of each TWAP's largest gap is 31.1 s, so "35 seconds without a slice means the end" is wrong for only 0.43 % of TWAPs. But waiting costs more than expected: <strong>4.4 bp (t = 4.8)</strong>, 5.4 bp in verification, almost all of it in the first 35 seconds. When the flow stops, the book refills within seconds; whoever knows the end time exits before the others notice.</p>
 
-<figure class="fig" data-fig="c48_twap_fin_sans_annonce">
+<figure class="fig" data-fig="fig15">
   <figcaption><b>Figure 15.</b> Exit timing when the end is not announced. Slices are almost perfectly regular (right); the cost is in the reaction of the book (left).</figcaption>
 </figure>
 
@@ -238,17 +238,17 @@
 <p>Three entries were compared. <strong>E1</strong> uses the public trade feed only (a new TWAP is a heavy slice from a wallet, coin and side with no slice in the previous \(G\) seconds; we keep our own 7-day count). <strong>E2</strong> waits for the API to confirm a new TWAP, its size, duration and the wallet's exact 7-day count, and enters at first slice plus 2 seconds. <strong>E3</strong> splits the two. Waiting one more second costs only 0.35 bp: the price does not leave in the second after the first slice. The core set still contained three filters unknown at entry (at least two slices, announcement found after the fact, exit price available); removing them costs about 2 bp. The "honest" exit A uses the announced end for completed TWAPs and the cancellation time plus 2 seconds for cancelled ones (the API keeps it to the second); exit B is the 35-second rule.</p>
 <p>Result, without look-ahead: <strong>E2 with exit A, +35.3 bp per position (t = 9.8)</strong>; exit B, +31.0. E2 dominates E1 by 20 % per day (1,451 bp/day against 1,211 at zero size). The gain is concentrated in cancelled TWAPs (+64.5 bp against +26.4 for completed ones): when the large player stops, the price comes back fast.</p>
 
-<figure class="fig" data-fig="c50_entrees">
+<figure class="fig" data-fig="fig16">
   <figcaption><b>Figure 16.</b> Entries and exits without information from the future (zero size). Bottom right: distribution of the result per position, E2.</figcaption>
 </figure>
 
 <h3>Live feasibility</h3>
 <p>Every TWAP fill has a null transaction hash, and about 99.4 % of null-hash trades are TWAP slices, so a slice is identifiable in the free public feed, with the TWAP's wallet as aggressor. A 15-minute live probe measured slices arriving 0.35 s after their block (median) and the API returning a brand-new TWAP 1.19 s after its first slice (median, 0.62 to 1.60 s). The signal rate is about 39 a day, with at most four positions open in 99 % of minutes.</p>
 
-<figure class="fig" data-fig="c51_sonde">
+<figure class="fig" data-fig="fig18">
   <figcaption><b>Figure 17.</b> Live probe on the public endpoints. Left: feed latency against block time. Right: delays between announcement, first slice and API response for new TWAPs.</figcaption>
 </figure>
-<figure class="fig" data-fig="c51_capacite">
+<figure class="fig" data-fig="fig19">
   <figcaption><b>Figure 18.</b> The retained TWAPs: executed size distribution (left) and signals per day over the 150 in-sample days (right).</figcaption>
 </figure>
 
@@ -258,20 +258,20 @@
 <div class="eq">\[ N \;=\; \min\!\Big(\frac{r \cdot C}{0.30},\; 3\, V^{\text{HL}}_{30s}\Big) \]</div>
 <p>with \(C\) the capital and \(r\) the fraction of capital lost if a position reaches the &minus;30 % isolated-margin liquidation.</p>
 
-<figure class="fig" data-fig="c50_impact">
+<figure class="fig" data-fig="fig17">
   <figcaption><b>Figure 19.</b> Top left: slippage of forced-size taker orders by liquidity tercile. Others: daily profit and edge per position under different sizing rules and caps.</figcaption>
 </figure>
 
 <h3>The frozen model</h3>
 <p><strong>Wake v0</strong> (we sit in the wake of a heavy TWAP): rules of Section 8, entry E2, exit A, fixed size capped at \(3\,V_{30s}\), fees and modelled slippage on both sides, no stop. At 2,000 dollars per position: <strong>27,939 dollars over 150 days, 216.6 a day, 83 % of winning days</strong>, a largest drawdown of 152 dollars. Just over half of positions win (52 %), but the average win is 2.3 times the average loss. Every month is positive. The ten best positions make 11 % of the profit. The two worst are a real crash: two buying TWAPs launched while a coin fell from 0.54 to 0.10 in six minutes, about &minus;20 % each.</p>
 
-<figure class="fig" data-fig="c53_sillage_v0">
+<figure class="fig" data-fig="fig20">
   <figcaption><b>Figure 20.</b> Wake v0, in sample and exploratory. Cumulative profit for three sizes (dashes separate non-contiguous months), drawdowns, monthly profit and the distribution per position.</figcaption>
 </figure>
 
 <p><strong>Wake v1</strong> adds protections fixed by logic before the computation: a &minus;5 % catastrophe stop, isolated margin (loss bounded by the margin \(M = 0.30 + 1/(2L_{\max})\)), at most 5 open positions and 2 per coin, at most 10 entries per 30 minutes, and a 24-hour pause after a third stop in 24 hours. The result sits on a plateau (7.5 to 8.6 % a month across stops from 3 to 10 % and 3 to 8 positions). With 25,000 dollars and 1 % risk per position: <strong>10.5 % a month in sample, worst month +3.6 %, largest drawdown &minus;0.28 %</strong>. Because verification months earned about half of selection months, the stated expectation for the out-of-sample test was about half of that.</p>
 
-<figure class="fig" data-fig="c54_sillage_v1">
+<figure class="fig" data-fig="fig21">
   <figcaption><b>Figure 21.</b> Wake v1 in sample, cumulative profit as a percentage of capital for three risk levels and four capital sizes. The percentage falls as capital grows: the size cap is the strategy's capacity.</figcaption>
 </figure>
 
@@ -286,10 +286,10 @@
 
 <p>By month, the edge reads +13.2, +7.6, +15.4, +6.1 and <strong>+3.0 bp</strong> in October 2026. Completed TWAPs kept half their gain (+26.4 to +14.1 bp); cancelled TWAPs stopped paying (+64.5 to &minus;2.6 bp), with the same cancellation-reading delay as before. The wider universe explains nothing (original coins +9.2 bp, new ones +9.6). Capacity is small: above 25,000 to 50,000 dollars at medium risk, \(t\) drops below 4, and at 100,000 dollars with 2 % risk it is 1.35.</p>
 
-<figure class="fig" data-fig="c56_sillage_oos">
+<figure class="fig" data-fig="fig22">
   <figcaption><b>Figure 22.</b> Wake v1 on the five unseen months, cumulative profit as a percentage of capital. October 2026 is nearly flat.</figcaption>
 </figure>
-<figure class="fig" data-fig="c56_comparaison">
+<figure class="fig" data-fig="fig23">
   <figcaption><b>Figure 23.</b> In sample against out of sample. Left: monthly return by capital and risk (dashed: in sample). Right: gross edge per position over ten months, in-sample in grey.</figcaption>
 </figure>
 
@@ -306,7 +306,7 @@
 </ul>
 <p>Two further facts close the case. Signals with no follower in the first 2 seconds decayed just as much (+58.9 to +3.1 bp): the whole market adapted, either followers buying ahead of the TWAP and selling to it later, or makers who now see it coming and no longer step back. Both absorb its flow. And <strong>speed does not help</strong>: even entering at the last price before the first slice (which would need a node), the October 2026 edge caps at +5.1 bp before spread and impact.</p>
 
-<figure class="fig" data-fig="c57_declin">
+<figure class="fig" data-fig="fig24">
   <figcaption><b>Figure 24.</b> Ten months of the same frozen signal (grey: in sample, blue: out of sample). Followers rise (H1), the price response at equal weight collapses (H2), while turbulence (H3, with edge per unit of turbulence on the right axis) and the TWAPs themselves (H4) do not change.</figcaption>
 </figure>
 
@@ -317,7 +317,7 @@
 <p>A TWAP still pays on every slice: fees to the venue, the spread to whoever is on the other side, and whatever impact is left. If followers took the pressure, maybe the money now goes to the makers. We matched 10.0 million TWAP fills (5.82 billion dollars, two days per month over the ten months) to the maker fill of the same trade, and marked each maker position at later non-TWAP trade prices.</p>
 <p>The maker earns the spread and gives it back: <strong>+2.28 bp at 30 seconds, &minus;0.45 bp at 5 minutes, &minus;4.60 bp at the end of the TWAP</strong>. The TWAP keeps pushing, which is adverse selection for whoever holds the other side. For us at the lowest fee tier (1.5 bp on perps, 4 on spot) that is <strong>&minus;2.11 bp at 5 minutes, daily t = &minus;6.0</strong>; on the heavy TWAPs Wake used to follow it is &minus;13 to &minus;46 bp by the end. The flow is fragmented across 8,000 to 11,000 makers a month, the top ten absorb 21 to 30 % of it, and none of them earns consistently. The followers of Section 11 are almost never on the other side (0.1 to 1 % of the flow): they trade with the TWAP, not against it.</p>
 
-<figure class="fig" data-fig="c59_makers">
+<figure class="fig" data-fig="fig25">
   <figcaption><b>Figure 25.</b> The maker facing TWAP slices, over ten months. The short-term spread is real (top left, 30 s) and is returned within minutes; nobody among the largest makers earns it reliably.</figcaption>
 </figure>
 
