@@ -167,3 +167,12 @@ figcaption b { color: var(--text); font-weight: 500; font-family: var(--mono); f
   .item .no, .item .meta { text-align: left; padding: 0; }
   .wrap, .paper { padding-left: 16px; padding-right: 16px; }
 }
+
+/* supplementary figures */
+details.supp { border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); margin: 10px 0 30px; }
+details.supp > summary { cursor: pointer; padding: 14px 18px; font: 500 13px/1.4 var(--mono); color: var(--text-2); list-style: none; }
+details.supp > summary::-webkit-details-marker { display: none; }
+details.supp > summary::before { content: "+"; display: inline-block; width: 18px; color: var(--text-3); }
+details.supp[open] > summary::before { content: "\2212"; }
+details.supp[open] > summary { border-bottom: 1px solid var(--line); }
+details.supp > figure.fig { margin: 22px 18px 30px; }

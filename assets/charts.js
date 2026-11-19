@@ -142,6 +142,15 @@
         } else if (s.t === "v") {
           el("line", { x1: sxx(s.x), x2: sxx(s.x), y1: y1, y2: y0, stroke: col, "stroke-width": 1, "stroke-dasharray": DASH[s.ls] || null, opacity: 0.9 }, gp);
           if (s.n && !s.n.startsWith("_")) legend.push({ n: s.n, c: col, ls: s.ls, k: "l" });
+        } else if (s.t === "err") {
+          s.x.forEach((xv, i) => {
+            const X = sxx(xv), A = syy(s.lo[i]), B = syy(s.hi[i]);
+            el("line", { x1: X, x2: X, y1: A, y2: B, stroke: col, "stroke-width": 1.2, opacity: 0.85 }, gp);
+            [A, B].forEach(Y => el("line", { x1: X - 5, x2: X + 5, y1: Y, y2: Y, stroke: col, "stroke-width": 1.2, opacity: 0.85 }, gp));
+            const hit = el("line", { x1: X, x2: X, y1: A, y2: B, stroke: "transparent", "stroke-width": 10 }, gp);
+            el("title", {}, hit).textContent = `95 % CI: ${fmt(s.lo[i])} to ${fmt(s.hi[i])}`;
+          });
+          if (s.n) legend.push({ n: s.n, c: col, k: "l" });
         } else if (s.t === "poly") {
           const d = s.x.map((xv, i) => (i ? "L" : "M") + sxx(xv).toFixed(1) + " " + syy(s.y[i]).toFixed(1)).join("") + "Z";
           el("path", { d, fill: col, opacity: Math.min(0.55, op), stroke: "none" }, gp);
