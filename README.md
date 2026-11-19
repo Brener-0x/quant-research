@@ -4,9 +4,9 @@ Quantitative research notes on crypto market microstructure. Each note states a 
 looking at the data, keeps an out-of-sample period sealed until the model is frozen, and reports the verdict as it
 comes.
 
-| # | Note | Status |
-|---|------|--------|
-| 01 | [Front-Running TWAPs on Hyperliquid](papers/twap-front-running/) | Closed, not viable |
+| # | Note |
+|---|------|
+| 01 | [Front-Running TWAPs on Hyperliquid](papers/twap-front-running/) |
 
 Site: served by GitHub Pages from the repository root (`index.html`).
 

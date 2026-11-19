@@ -3,7 +3,7 @@
 (function () {
   "use strict";
   const NS = "http://www.w3.org/2000/svg";
-  const W = 560, H = 320;
+  let W = 560, H = 320;
   const DASH = { "--": "5 4", ":": "1.5 3", "-.": "6 3 1.5 3", "-": null };
 
   function el(tag, attrs, parent) {
@@ -138,7 +138,7 @@
           el("path", { d, fill: col, opacity: Math.min(0.55, op), stroke: "none" }, gp);
         } else if (s.t === "txt") {
           const X = s.axe ? x0 + s.x * (x1 - x0) : sxx(s.x), Y = s.axe ? y0 - s.y * (y0 - y1) : syy(s.y);
-          const t = el("text", { x: X + 2, y: Y + (s.va === "center" ? 3.5 : 0), class: "ann", "text-anchor": s.ha === "right" ? "end" : s.ha === "center" ? "middle" : "start" }, svg);
+          const t = el("text", { x: s.ha === "center" ? X : X + 2, y: Y + (s.va === "center" ? 3.5 : s.va === "bottom" ? -2 : 0), class: "ann", style: s.c && s.c !== "#a3a8ae" ? "fill:" + s.c : null, "text-anchor": s.ha === "right" ? "end" : s.ha === "center" ? "middle" : "start" }, svg);
           t.textContent = s.s;
         }
       });
@@ -164,7 +164,7 @@
       const hit = el("rect", { x: x0, y: y1, width: x1 - x0, height: y0 - y1, fill: "transparent" }, svg);
       hit.addEventListener("mousemove", ev => {
         const box = svg.getBoundingClientRect();
-        const X = (ev.clientX - box.left) * W / box.width;
+        const X = (ev.clientX - box.left) * svg.viewBox.baseVal.width / box.width;
         let best = null;
         const rows = [];
         lines.forEach(l => {
@@ -222,6 +222,7 @@
       if (ax.droite) return;
       if (only && !only.includes(i)) return;
       const twin = axes.find((b, j) => j !== i && b.droite && b.pos.every((v, k) => Math.abs(v - ax.pos[k]) < 1e-6));
+      W = f.vw || 560; H = f.vh || 320;
       panel(grid, ax, twin || null);
     });
     if (grid.children.length === 1) grid.classList.add("single");

@@ -26,10 +26,10 @@
 <main class="paper">
 
 <header>
-  <div class="kicker">Market microstructure · Hyperliquid · Closed: not viable</div>
+  <div class="kicker">Market microstructure · Hyperliquid</div>
   <h1>Front-Running TWAPs on Hyperliquid</h1>
   <p class="sub">A forced, public and signed order flow. The edge was real, passed a pre-registered out-of-sample test, and was arbitraged away while we were measuring it.</p>
-  <div class="byline"><span><b>Brener_0x</b></span><span>Research note No. 01</span><span>303 days of on-chain fills</span><span>25 figures</span></div>
+  <div class="byline"><span><b>Brener_0x</b></span><span>Research note No. 01</span><span>303 days of on-chain fills</span><span>26 figures</span></div>
 </header>
 
 <section class="abstract">
@@ -297,6 +297,12 @@
 
 <!-- 11 -->
 <h2 id="s11"><span class="n">11</span>Why the edge decays</h2>
+<p>Figure 24 puts the two series side by side: the net edge of the same frozen signal, month by month, and the followers who arrived on it. The 20 wallets that most often take on the same side within 2 seconds of a first slice were all absent in the first two months; they appear from February 2026, and as their number grows the edge falls.</p>
+
+<figure class="fig" data-fig="key">
+  <figcaption><b>Figure 24.</b> The key chart. Bars: net edge per position of the frozen signal (zero size, fees included), in-sample months in grey, out-of-sample in blue. Red line (right axis): share of signals with another taker on our side within 2 seconds. Dashed line: share of signals hit by the 20 most frequent followers. Orange labels: number of those 20 wallets already active that month (cumulative by month of first appearance).</figcaption>
+</figure>
+
 <p>Four hypotheses, each with a measurable trace, on 12,010 signals over the ten months. The total move is measured from the last trade before the first slice to the exit; the part "taken before us" stops at our entry price.</p>
 <ul>
   <li><strong>H1, competition.</strong> The share of signals where another wallet takes on our side within 2 seconds of the first slice went from <strong>14.0 % (October 2025) to 66.1 % (October 2026)</strong>, and their volume from 0.5 to 2.2 times the volume per 30 seconds. The 20 most frequent followers all appear from February 2026 onward (none in the first two months) and touch 53 % of the October 2026 signals.</li>
@@ -307,7 +313,7 @@
 <p>Two further facts close the case. Signals with no follower in the first 2 seconds decayed just as much (+58.9 to +3.1 bp): the whole market adapted, either followers buying ahead of the TWAP and selling to it later, or makers who now see it coming and no longer step back. Both absorb its flow. And <strong>speed does not help</strong>: even entering at the last price before the first slice (which would need a node), the October 2026 edge caps at +5.1 bp before spread and impact.</p>
 
 <figure class="fig" data-fig="fig24">
-  <figcaption><b>Figure 24.</b> Ten months of the same frozen signal (grey: in sample, blue: out of sample). Followers rise (H1), the price response at equal weight collapses (H2), while turbulence (H3, with edge per unit of turbulence on the right axis) and the TWAPs themselves (H4) do not change.</figcaption>
+  <figcaption><b>Figure 25.</b> Ten months of the same frozen signal (grey: in sample, blue: out of sample). Followers rise (H1), the price response at equal weight collapses (H2), while turbulence (H3, with edge per unit of turbulence on the right axis) and the TWAPs themselves (H4) do not change.</figcaption>
 </figure>
 
 <p>This is the Grossman&ndash;Stiglitz mechanism<sup><a href="#r3">3</a></sup> observed at a monthly frequency: an inefficiency that costs little to read cannot stay profitable once enough agents read it. Here it took about twelve months from a +62 bp edge to a +3 bp edge, by identifiable wallets.</p>
@@ -318,7 +324,7 @@
 <p>The maker earns the spread and gives it back: <strong>+2.28 bp at 30 seconds, &minus;0.45 bp at 5 minutes, &minus;4.60 bp at the end of the TWAP</strong>. The TWAP keeps pushing, which is adverse selection for whoever holds the other side. For us at the lowest fee tier (1.5 bp on perps, 4 on spot) that is <strong>&minus;2.11 bp at 5 minutes, daily t = &minus;6.0</strong>; on the heavy TWAPs Wake used to follow it is &minus;13 to &minus;46 bp by the end. The flow is fragmented across 8,000 to 11,000 makers a month, the top ten absorb 21 to 30 % of it, and none of them earns consistently. The followers of Section 11 are almost never on the other side (0.1 to 1 % of the flow): they trade with the TWAP, not against it.</p>
 
 <figure class="fig" data-fig="fig25">
-  <figcaption><b>Figure 25.</b> The maker facing TWAP slices, over ten months. The short-term spread is real (top left, 30 s) and is returned within minutes; nobody among the largest makers earns it reliably.</figcaption>
+  <figcaption><b>Figure 26.</b> The maker facing TWAP slices, over ten months. The short-term spread is real (top left, 30 s) and is returned within minutes; nobody among the largest makers earns it reliably.</figcaption>
 </figure>
 
 <p>What a TWAP pays today goes mostly to the venue, as taker fees.</p>
