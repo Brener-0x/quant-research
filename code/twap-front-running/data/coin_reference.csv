@@ -1,0 +1,373 @@
+coin,type,family,base,dex,binance,bybit,hl_perp,reference
+0G,perp,crypto perp,0G,,0GUSDT,0GUSDT,,external
+2Z,perp,crypto perp,2Z,,2ZUSDT,2ZUSDT,,external
+@1,spot,native spot,HFUN,,partial:FUNUSDT,,,"external, part of the period"
+@107,spot,native spot,HYPE,,HYPEUSDT,HYPEUSDT,HYPE,external
+@142,spot,native spot,UBTC,,BTCUSDT,BTCUSDT,,external
+@150,spot,native spot,USDE,,,USDEUSDT,,external
+@151,spot,native spot,UETH,,ETHUSDT,ETHUSDT,,external
+@153,spot,native spot,FEUSD,,,,,none
+@156,spot,native spot,USOL,,SOLUSDT,SOLUSDT,,external
+@162,spot,native spot,UFART,,FARTCOINUSDT,FARTCOINUSDT,FARTCOIN,external
+@166,spot,native spot,USDT0,,,,,none
+@174,spot,native spot,ANON,,,,,none
+@180,spot,native spot,USDHL,,,,,none
+@182,spot,native spot,XAUT0,,,,,none
+@184,spot,native spot,HPENGU,,PENGUUSDT,PENGUUSDT,PENGU,external
+@188,spot,native spot,UPUMP,,PUMPUSDT,,,external
+@193,spot,native spot,UUUSPX,,SPXUSDT,SPXUSDT,,external
+@194,spot,native spot,UBONK,,1000BONKUSDT,1000BONKUSDT,,external
+@198,spot,native spot,WOULD,,,,,none
+@206,spot,native spot,UENA,,ENAUSDT,ENAUSDT,,external
+@207,spot,native spot,HYPE,,HYPEUSDT,HYPEUSDT,HYPE,external
+@210,spot,native spot,UXPL,,XPLUSDT,XPLUSDT,,external
+@213,spot,native spot,LINK0,,,,,none
+@223,spot,native spot,PUP,,,,,none
+@227,spot,native spot,AAVE0,,,,,none
+@228,spot,native spot,UDZ,,,,,none
+@230,spot,native spot,USDH,,,,,none
+@231,spot,native spot,UPHL,,,,,none
+@232,spot,native spot,HYPE,,HYPEUSDT,HYPEUSDT,HYPE,external
+@233,spot,native spot,UXPL,,XPLUSDT,XPLUSDT,,external
+@234,spot,native spot,UBTC,,BTCUSDT,BTCUSDT,,external
+@235,spot,native spot,UETH,,ETHUSDT,ETHUSDT,,external
+@243,spot,native spot,UMON,,MONUSDT,partial:MONUSDT,,external
+@248,spot,native spot,BZEC,,,,,none
+@250,spot,native spot,KHYPE,,HYPEUSDT,HYPEUSDT,HYPE,external
+@254,spot,native spot,KNTQ,,,,,none
+@255,spot,native spot,HYPE,,HYPEUSDT,HYPEUSDT,HYPE,external
+@260,spot,native spot,XMR1,,,,,none
+@272,spot,native spot,UZEC,,ZECUSDT,ZECUSDT,,external
+@284,spot,native spot,QONE,,,,,none
+@286,spot,native spot,HSEI,,SEIUSDT,SEIUSDT,,external
+@304,spot,native spot,LAMA,,,,,none
+@305,spot,native spot,BASED,,partial:BASEDUSDT,partial:BASEDUSDT,,"external, part of the period"
+AAVE,perp,crypto perp,AAVE,,AAVEUSDT,AAVEUSDT,,external
+ACE,perp,crypto perp,ACE,,ACEUSDT,ACEUSDT,,external
+ADA,perp,crypto perp,ADA,,ADAUSDT,ADAUSDT,,external
+AERO,perp,crypto perp,AERO,,AEROUSDT,AEROUSDT,,external
+AI16Z,perp,crypto perp,AI16Z,,partial:AI16ZUSDT,partial:AI16ZUSDT,,"external, part of the period"
+AIXBT,perp,crypto perp,AIXBT,,AIXBTUSDT,AIXBTUSDT,,external
+ALGO,perp,crypto perp,ALGO,,ALGOUSDT,ALGOUSDT,,external
+ALT,perp,crypto perp,ALT,,ALTUSDT,ALTUSDT,,external
+ANIME,perp,crypto perp,ANIME,,ANIMEUSDT,ANIMEUSDT,,external
+APE,perp,crypto perp,APE,,APEUSDT,APEUSDT,,external
+APEX,perp,crypto perp,APEX,,,APEXUSDT,,external
+APT,perp,crypto perp,APT,,APTUSDT,APTUSDT,,external
+AR,perp,crypto perp,AR,,ARUSDT,ARUSDT,,external
+ARB,perp,crypto perp,ARB,,ARBUSDT,ARBUSDT,,external
+ARK,perp,crypto perp,ARK,,ARKUSDT,ARKUSDT,,external
+ASTER,perp,crypto perp,ASTER,,ASTERUSDT,ASTERUSDT,,external
+ATOM,perp,crypto perp,ATOM,,ATOMUSDT,ATOMUSDT,,external
+AVAX,perp,crypto perp,AVAX,,AVAXUSDT,AVAXUSDT,,external
+AVNT,perp,crypto perp,AVNT,,AVNTUSDT,AVNTUSDT,,external
+AXS,perp,crypto perp,AXS,,AXSUSDT,AXSUSDT,,external
+AZTEC,perp,crypto perp,AZTEC,,partial:AZTECUSDT,partial:AZTECUSDT,,"external, part of the period"
+BABY,perp,crypto perp,BABY,,BABYUSDT,BABYUSDT,,external
+BANANA,perp,crypto perp,BANANA,,BANANAUSDT,BANANAUSDT,,external
+BCH,perp,crypto perp,BCH,,BCHUSDT,BCHUSDT,,external
+BERA,perp,crypto perp,BERA,,BERAUSDT,BERAUSDT,,external
+BIGTIME,perp,crypto perp,BIGTIME,,BIGTIMEUSDT,BIGTIMEUSDT,,external
+BIO,perp,crypto perp,BIO,,BIOUSDT,BIOUSDT,,external
+BLAST,perp,crypto perp,BLAST,,,BLASTUSDT,,external
+BLUR,perp,crypto perp,BLUR,,BLURUSDT,BLURUSDT,,external
+BNB,perp,crypto perp,BNB,,BNBUSDT,BNBUSDT,,external
+BOME,perp,crypto perp,BOME,,BOMEUSDT,BOMEUSDT,,external
+BRETT,perp,crypto perp,BRETT,,BRETTUSDT,BRETTUSDT,,external
+BSV,perp,crypto perp,BSV,,BSVUSDT,BSVUSDT,,external
+BTC,perp,crypto perp,BTC,,BTCUSDT,BTCUSDT,,external
+CAKE,perp,crypto perp,CAKE,,CAKEUSDT,CAKEUSDT,,external
+CC,perp,crypto perp,CC,,partial:CCUSDT,partial:CCUSDT,,"external, part of the period"
+CELO,perp,crypto perp,CELO,,CELOUSDT,CELOUSDT,,external
+CFX,perp,crypto perp,CFX,,CFXUSDT,CFXUSDT,,external
+CHILLGUY,perp,crypto perp,CHILLGUY,,CHILLGUYUSDT,CHILLGUYUSDT,,external
+CHIP,perp,crypto perp,CHIP,,partial:CHIPUSDT,partial:CHIPUSDT,,"external, part of the period"
+COMP,perp,crypto perp,COMP,,COMPUSDT,COMPUSDT,,external
+CRV,perp,crypto perp,CRV,,CRVUSDT,CRVUSDT,,external
+DASH,perp,crypto perp,DASH,,DASHUSDT,DASHUSDT,,external
+DOGE,perp,crypto perp,DOGE,,DOGEUSDT,DOGEUSDT,,external
+DOOD,perp,crypto perp,DOOD,,DOODUSDT,DOODUSDT,,external
+DOT,perp,crypto perp,DOT,,DOTUSDT,DOTUSDT,,external
+DYDX,perp,crypto perp,DYDX,,DYDXUSDT,DYDXUSDT,,external
+DYM,perp,crypto perp,DYM,,DYMUSDT,DYMUSDT,,external
+EIGEN,perp,crypto perp,EIGEN,,EIGENUSDT,EIGENUSDT,,external
+ENA,perp,crypto perp,ENA,,ENAUSDT,ENAUSDT,,external
+ENS,perp,crypto perp,ENS,,ENSUSDT,ENSUSDT,,external
+ETC,perp,crypto perp,ETC,,ETCUSDT,ETCUSDT,,external
+ETH,perp,crypto perp,ETH,,ETHUSDT,ETHUSDT,,external
+ETHFI,perp,crypto perp,ETHFI,,ETHFIUSDT,ETHFIUSDT,,external
+FARTCOIN,perp,crypto perp,FARTCOIN,,FARTCOINUSDT,FARTCOINUSDT,,external
+FET,perp,crypto perp,FET,,FETUSDT,,,external
+FIL,perp,crypto perp,FIL,,FILUSDT,FILUSDT,,external
+FOGO,perp,crypto perp,FOGO,,partial:FOGOUSDT,partial:FOGOUSDT,,"external, part of the period"
+FTT,perp,crypto perp,FTT,,,,,none
+FXS,perp,crypto perp,FXS,,partial:FXSUSDT,partial:FXSUSDT,,"external, part of the period"
+GALA,perp,crypto perp,GALA,,GALAUSDT,GALAUSDT,,external
+GAS,perp,crypto perp,GAS,,GASUSDT,GASUSDT,,external
+GMT,perp,crypto perp,GMT,,GMTUSDT,GMTUSDT,,external
+GMX,perp,crypto perp,GMX,,GMXUSDT,GMXUSDT,,external
+GOAT,perp,crypto perp,GOAT,,GOATUSDT,GOATUSDT,,external
+GRASS,perp,crypto perp,GRASS,,GRASSUSDT,GRASSUSDT,,external
+GRIFFAIN,perp,crypto perp,GRIFFAIN,,GRIFFAINUSDT,GRIFFAINUSDT,,external
+HBAR,perp,crypto perp,HBAR,,HBARUSDT,HBARUSDT,,external
+HEMI,perp,crypto perp,HEMI,,HEMIUSDT,HEMIUSDT,,external
+HMSTR,perp,crypto perp,HMSTR,,HMSTRUSDT,HMSTRUSDT,,external
+HYPE,perp,crypto perp,HYPE,,HYPEUSDT,HYPEUSDT,,external
+HYPER,perp,crypto perp,HYPER,,HYPERUSDT,HYPERUSDT,,external
+ICP,perp,crypto perp,ICP,,ICPUSDT,ICPUSDT,,external
+IMX,perp,crypto perp,IMX,,IMXUSDT,IMXUSDT,,external
+INIT,perp,crypto perp,INIT,,INITUSDT,INITUSDT,,external
+INJ,perp,crypto perp,INJ,,INJUSDT,INJUSDT,,external
+IO,perp,crypto perp,IO,,IOUSDT,IOUSDT,,external
+IOTA,perp,crypto perp,IOTA,,IOTAUSDT,IOTAUSDT,,external
+IP,perp,crypto perp,IP,,IPUSDT,IPUSDT,,external
+JTO,perp,crypto perp,JTO,,JTOUSDT,JTOUSDT,,external
+JUP,perp,crypto perp,JUP,,JUPUSDT,JUPUSDT,,external
+KAITO,perp,crypto perp,KAITO,,KAITOUSDT,KAITOUSDT,,external
+KAS,perp,crypto perp,KAS,,KASUSDT,KASUSDT,,external
+LAUNCHCOIN,perp,crypto perp,LAUNCHCOIN,,,partial:LAUNCHCOINUSDT,,"external, part of the period"
+LAYER,perp,crypto perp,LAYER,,LAYERUSDT,,,external
+LDO,perp,crypto perp,LDO,,LDOUSDT,LDOUSDT,,external
+LINEA,perp,crypto perp,LINEA,,LINEAUSDT,LINEAUSDT,,external
+LINK,perp,crypto perp,LINK,,LINKUSDT,LINKUSDT,,external
+LIT,perp,crypto perp,LIT,,partial:LITUSDT,partial:LITUSDT,,"external, part of the period"
+LTC,perp,crypto perp,LTC,,LTCUSDT,LTCUSDT,,external
+MANTA,perp,crypto perp,MANTA,,MANTAUSDT,MANTAUSDT,,external
+MAV,perp,crypto perp,MAV,,MAVUSDT,MAVUSDT,,external
+MAVIA,perp,crypto perp,MAVIA,,MAVIAUSDT,MAVIAUSDT,,external
+ME,perp,crypto perp,ME,,MEUSDT,MEUSDT,,external
+MEGA,perp,crypto perp,MEGA,,partial:MEGAUSDT,partial:MEGAUSDT,,"external, part of the period"
+MELANIA,perp,crypto perp,MELANIA,,MELANIAUSDT,MELANIAUSDT,,external
+MEME,perp,crypto perp,MEME,,MEMEUSDT,MEMEUSDT,,external
+MERL,perp,crypto perp,MERL,,MERLUSDT,MERLUSDT,,external
+MET,perp,crypto perp,MET,,METUSDT,METUSDT,,external
+MEW,perp,crypto perp,MEW,,MEWUSDT,MEWUSDT,,external
+MINA,perp,crypto perp,MINA,,MINAUSDT,MINAUSDT,,external
+MNT,perp,crypto perp,MNT,,,MNTUSDT,,external
+MON,perp,crypto perp,MON,,MONUSDT,partial:MONUSDT,,external
+MOODENG,perp,crypto perp,MOODENG,,MOODENGUSDT,MOODENGUSDT,,external
+MORPHO,perp,crypto perp,MORPHO,,MORPHOUSDT,MORPHOUSDT,,external
+MOVE,perp,crypto perp,MOVE,,MOVEUSDT,MOVEUSDT,,external
+NEAR,perp,crypto perp,NEAR,,NEARUSDT,NEARUSDT,,external
+NEO,perp,crypto perp,NEO,,NEOUSDT,NEOUSDT,,external
+NIL,perp,crypto perp,NIL,,NILUSDT,NILUSDT,,external
+NOT,perp,crypto perp,NOT,,NOTUSDT,NOTUSDT,,external
+NXPC,perp,crypto perp,NXPC,,NXPCUSDT,NXPCUSDT,,external
+OM,perp,crypto perp,OM,,partial:OMUSDT,partial:OMUSDT,,"external, part of the period"
+ONDO,perp,crypto perp,ONDO,,ONDOUSDT,ONDOUSDT,,external
+OP,perp,crypto perp,OP,,OPUSDT,OPUSDT,,external
+ORDI,perp,crypto perp,ORDI,,ORDIUSDT,ORDIUSDT,,external
+PAXG,perp,crypto perp,PAXG,,PAXGUSDT,PAXGUSDT,,external
+PENDLE,perp,crypto perp,PENDLE,,PENDLEUSDT,PENDLEUSDT,,external
+PENGU,perp,crypto perp,PENGU,,PENGUUSDT,PENGUUSDT,,external
+PEOPLE,perp,crypto perp,PEOPLE,,PEOPLEUSDT,PEOPLEUSDT,,external
+PNUT,perp,crypto perp,PNUT,,PNUTUSDT,PNUTUSDT,,external
+POL,perp,crypto perp,POL,,POLUSDT,POLUSDT,,external
+POLYX,perp,crypto perp,POLYX,,POLYXUSDT,POLYXUSDT,,external
+POPCAT,perp,crypto perp,POPCAT,,POPCATUSDT,POPCATUSDT,,external
+PROMPT,perp,crypto perp,PROMPT,,PROMPTUSDT,PROMPTUSDT,,external
+PROVE,perp,crypto perp,PROVE,,PROVEUSDT,PROVEUSDT,,external
+PUMP,perp,crypto perp,PUMP,,PUMPUSDT,,,external
+PURR,perp,crypto perp,PURR,,,,,none
+PURR/USDC,spot,native spot,PURR,,,,PURR,internal: Hyperliquid perp
+PYTH,perp,crypto perp,PYTH,,PYTHUSDT,PYTHUSDT,,external
+RENDER,perp,crypto perp,RENDER,,RENDERUSDT,RENDERUSDT,,external
+RESOLV,perp,crypto perp,RESOLV,,RESOLVUSDT,RESOLVUSDT,,external
+REZ,perp,crypto perp,REZ,,REZUSDT,REZUSDT,,external
+RSR,perp,crypto perp,RSR,,RSRUSDT,RSRUSDT,,external
+RUNE,perp,crypto perp,RUNE,,RUNEUSDT,RUNEUSDT,,external
+S,perp,crypto perp,S,,SUSDT,SUSDT,,external
+SAGA,perp,crypto perp,SAGA,,SAGAUSDT,SAGAUSDT,,external
+SAND,perp,crypto perp,SAND,,SANDUSDT,SANDUSDT,,external
+SCR,perp,crypto perp,SCR,,SCRUSDT,SCRUSDT,,external
+SEI,perp,crypto perp,SEI,,SEIUSDT,SEIUSDT,,external
+SKR,perp,crypto perp,SKR,,partial:SKRUSDT,partial:SKRUSDT,,"external, part of the period"
+SKY,perp,crypto perp,SKY,,SKYUSDT,SKYUSDT,,external
+SNX,perp,crypto perp,SNX,,SNXUSDT,SNXUSDT,,external
+SOL,perp,crypto perp,SOL,,SOLUSDT,SOLUSDT,,external
+SOPH,perp,crypto perp,SOPH,,SOPHUSDT,SOPHUSDT,,external
+SPX,perp,crypto perp,SPX,,SPXUSDT,SPXUSDT,,external
+STABLE,perp,crypto perp,STABLE,,partial:STABLEUSDT,partial:STABLEUSDT,,"external, part of the period"
+STBL,perp,crypto perp,STBL,,STBLUSDT,STBLUSDT,,external
+STRK,perp,crypto perp,STRK,,STRKUSDT,STRKUSDT,,external
+STX,perp,crypto perp,STX,,STXUSDT,STXUSDT,,external
+SUI,perp,crypto perp,SUI,,SUIUSDT,SUIUSDT,,external
+SUPER,perp,crypto perp,SUPER,,SUPERUSDT,SUPERUSDT,,external
+SUSHI,perp,crypto perp,SUSHI,,SUSHIUSDT,SUSHIUSDT,,external
+SYRUP,perp,crypto perp,SYRUP,,SYRUPUSDT,SYRUPUSDT,,external
+TAO,perp,crypto perp,TAO,,TAOUSDT,TAOUSDT,,external
+TIA,perp,crypto perp,TIA,,TIAUSDT,TIAUSDT,,external
+TNSR,perp,crypto perp,TNSR,,TNSRUSDT,TNSRUSDT,,external
+TON,perp,crypto perp,TON,,TONUSDT,TONUSDT,,external
+TRB,perp,crypto perp,TRB,,TRBUSDT,TRBUSDT,,external
+TRUMP,perp,crypto perp,TRUMP,,TRUMPUSDT,TRUMPUSDT,,external
+TRX,perp,crypto perp,TRX,,TRXUSDT,TRXUSDT,,external
+TST,perp,crypto perp,TST,,TSTUSDT,,,external
+TURBO,perp,crypto perp,TURBO,,TURBOUSDT,1000TURBOUSDT,,external
+UMA,perp,crypto perp,UMA,,UMAUSDT,UMAUSDT,,external
+UNI,perp,crypto perp,UNI,,UNIUSDT,UNIUSDT,,external
+USTC,perp,crypto perp,USTC,,USTCUSDT,USTCUSDT,,external
+USUAL,perp,crypto perp,USUAL,,USUALUSDT,USUALUSDT,,external
+VINE,perp,crypto perp,VINE,,partial:VINEUSDT,VINEUSDT,,external
+VIRTUAL,perp,crypto perp,VIRTUAL,,VIRTUALUSDT,VIRTUALUSDT,,external
+VVV,perp,crypto perp,VVV,,VVVUSDT,VVVUSDT,,external
+W,perp,crypto perp,W,,WUSDT,WUSDT,,external
+WCT,perp,crypto perp,WCT,,WCTUSDT,WCTUSDT,,external
+WIF,perp,crypto perp,WIF,,WIFUSDT,WIFUSDT,,external
+WLD,perp,crypto perp,WLD,,WLDUSDT,WLDUSDT,,external
+WLFI,perp,crypto perp,WLFI,,WLFIUSDT,WLFIUSDT,,external
+XAI,perp,crypto perp,XAI,,XAIUSDT,XAIUSDT,,external
+XLM,perp,crypto perp,XLM,,XLMUSDT,XLMUSDT,,external
+XMR,perp,crypto perp,XMR,,XMRUSDT,XMRUSDT,,external
+XPL,perp,crypto perp,XPL,,XPLUSDT,XPLUSDT,,external
+XRP,perp,crypto perp,XRP,,XRPUSDT,XRPUSDT,,external
+YGG,perp,crypto perp,YGG,,YGGUSDT,YGGUSDT,,external
+YZY,perp,crypto perp,YZY,,,partial:YZYUSDT,,"external, part of the period"
+ZEC,perp,crypto perp,ZEC,,ZECUSDT,ZECUSDT,,external
+ZEN,perp,crypto perp,ZEN,,ZENUSDT,ZENUSDT,,external
+ZEREBRO,perp,crypto perp,ZEREBRO,,ZEREBROUSDT,ZEREBROUSDT,,external
+ZETA,perp,crypto perp,ZETA,,ZETAUSDT,ZETAUSDT,,external
+ZK,perp,crypto perp,ZK,,ZKUSDT,ZKUSDT,,external
+ZORA,perp,crypto perp,ZORA,,ZORAUSDT,ZORAUSDT,,external
+ZRO,perp,crypto perp,ZRO,,ZROUSDT,ZROUSDT,,external
+cash:AMZN,HIP-3,HIP-3 equities and indices,AMZN,cash,partial:AMZNUSDT,partial:AMZNUSDT,,"external, part of the period"
+cash:CAR,HIP-3,HIP-3 equities and indices,CAR,cash,,,,none
+cash:EWY,HIP-3,HIP-3 equities and indices,EWY,cash,partial:EWYUSDT,partial:EWYUSDT,,"external, part of the period"
+cash:GOLD,HIP-3,HIP-3 commodities and FX,GOLD,cash,,,,internal: other HIP-3 deployer
+cash:GOOGL,HIP-3,HIP-3 equities and indices,GOOGL,cash,partial:GOOGLUSDT,partial:GOOGLUSDT,,"external, part of the period"
+cash:HOOD,HIP-3,HIP-3 equities and indices,HOOD,cash,partial:HOODUSDT,partial:HOODUSDT,,"external, part of the period"
+cash:INTC,HIP-3,HIP-3 equities and indices,INTC,cash,partial:INTCUSDT,partial:INTCUSDT,,"external, part of the period"
+cash:KWEB,HIP-3,HIP-3 equities and indices,KWEB,cash,,,,none
+cash:META,HIP-3,HIP-3 equities and indices,META,cash,partial:METAUSDT,partial:METAUSDT,,"external, part of the period"
+cash:MSFT,HIP-3,HIP-3 equities and indices,MSFT,cash,partial:MSFTUSDT,partial:MSFTUSDT,,"external, part of the period"
+cash:NVDA,HIP-3,HIP-3 equities and indices,NVDA,cash,partial:NVDAUSDT,partial:NVDAUSDT,,"external, part of the period"
+cash:SILVER,HIP-3,HIP-3 commodities and FX,SILVER,cash,,,,internal: other HIP-3 deployer
+cash:TSLA,HIP-3,HIP-3 equities and indices,TSLA,cash,partial:TSLAUSDT,partial:TSLAUSDT,,"external, part of the period"
+cash:USA500,HIP-3,HIP-3 equities and indices,USA500,cash,,,,internal: other HIP-3 deployer
+cash:WTI,HIP-3,HIP-3 commodities and FX,WTI,cash,,,,none
+flx:COIN,HIP-3,HIP-3 equities and indices,COIN,flx,partial:COINUSDT,partial:COINUSDT,,"external, part of the period"
+flx:COPPER,HIP-3,HIP-3 commodities and FX,COPPER,flx,partial:COPPERUSDT,,,"external, part of the period"
+flx:CRCL,HIP-3,HIP-3 equities and indices,CRCL,flx,partial:CRCLUSDT,partial:CRCLUSDT,,"external, part of the period"
+flx:GAS,HIP-3,HIP-3 commodities and FX,GAS,flx,GASUSDT,GASUSDT,,external
+flx:GOLD,HIP-3,HIP-3 commodities and FX,GOLD,flx,,,,internal: other HIP-3 deployer
+flx:NVDA,HIP-3,HIP-3 equities and indices,NVDA,flx,partial:NVDAUSDT,partial:NVDAUSDT,,"external, part of the period"
+flx:OIL,HIP-3,HIP-3 commodities and FX,OIL,flx,,,,none
+flx:PALLADIUM,HIP-3,HIP-3 commodities and FX,PALLADIUM,flx,,,,internal: other HIP-3 deployer
+flx:PLATINUM,HIP-3,HIP-3 commodities and FX,PLATINUM,flx,,,,internal: other HIP-3 deployer
+flx:SILVER,HIP-3,HIP-3 commodities and FX,SILVER,flx,,,,internal: other HIP-3 deployer
+flx:TSLA,HIP-3,HIP-3 equities and indices,TSLA,flx,partial:TSLAUSDT,partial:TSLAUSDT,,"external, part of the period"
+flx:USA500,HIP-3,HIP-3 equities and indices,USA500,flx,,,,internal: other HIP-3 deployer
+flx:XMR,HIP-3,HIP-3 equities and indices,XMR,flx,XMRUSDT,XMRUSDT,,external
+hyna:1000PEPE,HIP-3,HIP-3 equities and indices,1000PEPE,hyna,1000PEPEUSDT,1000PEPEUSDT,,external
+hyna:ADA,HIP-3,HIP-3 crypto,ADA,hyna,ADAUSDT,ADAUSDT,,external
+hyna:BASED,HIP-3,HIP-3 equities and indices,BASED,hyna,partial:BASEDUSDT,partial:BASEDUSDT,,"external, part of the period"
+hyna:BCH,HIP-3,HIP-3 equities and indices,BCH,hyna,BCHUSDT,BCHUSDT,,external
+hyna:BNB,HIP-3,HIP-3 crypto,BNB,hyna,BNBUSDT,BNBUSDT,,external
+hyna:BTC,HIP-3,HIP-3 crypto,BTC,hyna,BTCUSDT,BTCUSDT,,external
+hyna:DOGE,HIP-3,HIP-3 crypto,DOGE,hyna,DOGEUSDT,DOGEUSDT,,external
+hyna:ENA,HIP-3,HIP-3 crypto,ENA,hyna,ENAUSDT,ENAUSDT,,external
+hyna:ETH,HIP-3,HIP-3 crypto,ETH,hyna,ETHUSDT,ETHUSDT,,external
+hyna:FARTCOIN,HIP-3,HIP-3 crypto,FARTCOIN,hyna,FARTCOINUSDT,FARTCOINUSDT,,external
+hyna:HYPE,HIP-3,HIP-3 crypto,HYPE,hyna,HYPEUSDT,HYPEUSDT,,external
+hyna:IP,HIP-3,HIP-3 equities and indices,IP,hyna,IPUSDT,IPUSDT,,external
+hyna:LIGHTER,HIP-3,HIP-3 equities and indices,LIGHTER,hyna,,,,none
+hyna:LINK,HIP-3,HIP-3 crypto,LINK,hyna,LINKUSDT,LINKUSDT,,external
+hyna:PUMP,HIP-3,HIP-3 crypto,PUMP,hyna,PUMPUSDT,,,external
+hyna:SOL,HIP-3,HIP-3 crypto,SOL,hyna,SOLUSDT,SOLUSDT,,external
+hyna:SUI,HIP-3,HIP-3 crypto,SUI,hyna,SUIUSDT,SUIUSDT,,external
+hyna:XMR,HIP-3,HIP-3 equities and indices,XMR,hyna,XMRUSDT,XMRUSDT,,external
+hyna:XPL,HIP-3,HIP-3 equities and indices,XPL,hyna,XPLUSDT,XPLUSDT,,external
+hyna:XRP,HIP-3,HIP-3 crypto,XRP,hyna,XRPUSDT,XRPUSDT,,external
+hyna:ZEC,HIP-3,HIP-3 equities and indices,ZEC,hyna,ZECUSDT,ZECUSDT,,external
+kBONK,perp,crypto perp,kBONK,,1000BONKUSDT,1000BONKUSDT,,external
+kFLOKI,perp,crypto perp,kFLOKI,,1000FLOKIUSDT,1000FLOKIUSDT,,external
+kLUNC,perp,crypto perp,kLUNC,,1000LUNCUSDT,1000LUNCUSDT,,external
+kNEIRO,perp,crypto perp,kNEIRO,,NEIROUSDT,,,external
+kPEPE,perp,crypto perp,kPEPE,,1000PEPEUSDT,1000PEPEUSDT,,external
+kSHIB,perp,crypto perp,kSHIB,,1000SHIBUSDT,,,external
+km:AAPL,HIP-3,HIP-3 equities and indices,AAPL,km,partial:AAPLUSDT,partial:AAPLUSDT,,"external, part of the period"
+km:BABA,HIP-3,HIP-3 equities and indices,BABA,km,partial:BABAUSDT,partial:BABAUSDT,,"external, part of the period"
+km:BMNR,HIP-3,HIP-3 equities and indices,BMNR,km,,partial:BMNRUSDT,,"external, part of the period"
+km:EUR,HIP-3,HIP-3 commodities and FX,EUR,km,,,,internal: other HIP-3 deployer
+km:GOLD,HIP-3,HIP-3 commodities and FX,GOLD,km,,,,internal: other HIP-3 deployer
+km:GOOGL,HIP-3,HIP-3 equities and indices,GOOGL,km,partial:GOOGLUSDT,partial:GOOGLUSDT,,"external, part of the period"
+km:MU,HIP-3,HIP-3 equities and indices,MU,km,partial:MUUSDT,partial:MUUSDT,,"external, part of the period"
+km:NVDA,HIP-3,HIP-3 equities and indices,NVDA,km,partial:NVDAUSDT,partial:NVDAUSDT,,"external, part of the period"
+km:PLTR,HIP-3,HIP-3 equities and indices,PLTR,km,partial:PLTRUSDT,partial:PLTRUSDT,,"external, part of the period"
+km:SILVER,HIP-3,HIP-3 commodities and FX,SILVER,km,,,,internal: other HIP-3 deployer
+km:SMALL2000,HIP-3,HIP-3 equities and indices,SMALL2000,km,,,,none
+km:TSLA,HIP-3,HIP-3 equities and indices,TSLA,km,partial:TSLAUSDT,partial:TSLAUSDT,,"external, part of the period"
+km:US500,HIP-3,HIP-3 equities and indices,US500,km,,,,none
+km:USENERGY,HIP-3,HIP-3 equities and indices,USENERGY,km,,,,none
+km:USOIL,HIP-3,HIP-3 commodities and FX,USOIL,km,,,,none
+km:USTECH,HIP-3,HIP-3 equities and indices,USTECH,km,,,,none
+para:AVGO,HIP-3,HIP-3 equities and indices,AVGO,para,partial:AVGOUSDT,partial:AVGOUSDT,,"external, part of the period"
+para:OTHERS,HIP-3,HIP-3 equities and indices,OTHERS,para,,,,none
+para:TOTAL2,HIP-3,HIP-3 equities and indices,TOTAL2,para,,,,none
+vntl:BIOTECH,HIP-3,HIP-3 equities and indices,BIOTECH,vntl,,,,none
+vntl:DEFENSE,HIP-3,HIP-3 equities and indices,DEFENSE,vntl,,,,none
+vntl:ENERGY,HIP-3,HIP-3 equities and indices,ENERGY,vntl,,,,none
+vntl:INFOTECH,HIP-3,HIP-3 equities and indices,INFOTECH,vntl,,,,none
+vntl:MAG7,HIP-3,HIP-3 equities and indices,MAG7,vntl,,,,none
+vntl:NUCLEAR,HIP-3,HIP-3 equities and indices,NUCLEAR,vntl,,,,none
+vntl:ROBOT,HIP-3,HIP-3 equities and indices,ROBOT,vntl,,,,none
+vntl:SEMIS,HIP-3,HIP-3 equities and indices,SEMIS,vntl,,,,none
+xyz:AAPL,HIP-3,HIP-3 equities and indices,AAPL,xyz,partial:AAPLUSDT,partial:AAPLUSDT,,"external, part of the period"
+xyz:AMD,HIP-3,HIP-3 equities and indices,AMD,xyz,partial:AMDUSDT,,,"external, part of the period"
+xyz:AMZN,HIP-3,HIP-3 equities and indices,AMZN,xyz,partial:AMZNUSDT,partial:AMZNUSDT,,"external, part of the period"
+xyz:ARM,HIP-3,HIP-3 equities and indices,ARM,xyz,,partial:ARMUSDT,,"external, part of the period"
+xyz:BABA,HIP-3,HIP-3 equities and indices,BABA,xyz,partial:BABAUSDT,partial:BABAUSDT,,"external, part of the period"
+xyz:BB,HIP-3,HIP-3 equities and indices,BB,xyz,BBUSDT,BBUSDT,,external
+xyz:BIRD,HIP-3,HIP-3 equities and indices,BIRD,xyz,,,,none
+xyz:BRENTOIL,HIP-3,HIP-3 commodities and FX,BRENTOIL,xyz,,,,none
+xyz:CBRS,HIP-3,HIP-3 equities and indices,CBRS,xyz,,,,none
+xyz:CL,HIP-3,HIP-3 commodities and FX,CL,xyz,partial:CLUSDT,partial:CLUSDT,,"external, part of the period"
+xyz:COIN,HIP-3,HIP-3 equities and indices,COIN,xyz,partial:COINUSDT,partial:COINUSDT,,"external, part of the period"
+xyz:COPPER,HIP-3,HIP-3 commodities and FX,COPPER,xyz,partial:COPPERUSDT,,,"external, part of the period"
+xyz:COST,HIP-3,HIP-3 equities and indices,COST,xyz,,,,none
+xyz:CRCL,HIP-3,HIP-3 equities and indices,CRCL,xyz,partial:CRCLUSDT,partial:CRCLUSDT,,"external, part of the period"
+xyz:CRWV,HIP-3,HIP-3 equities and indices,CRWV,xyz,,partial:CRWVUSDT,,"external, part of the period"
+xyz:DKNG,HIP-3,HIP-3 equities and indices,DKNG,xyz,,,,none
+xyz:DRAM,HIP-3,HIP-3 equities and indices,DRAM,xyz,,,,none
+xyz:EUR,HIP-3,HIP-3 commodities and FX,EUR,xyz,,,,internal: other HIP-3 deployer
+xyz:EWJ,HIP-3,HIP-3 equities and indices,EWJ,xyz,partial:EWJUSDT,partial:EWJUSDT,,"external, part of the period"
+xyz:EWY,HIP-3,HIP-3 equities and indices,EWY,xyz,partial:EWYUSDT,partial:EWYUSDT,,"external, part of the period"
+xyz:GME,HIP-3,HIP-3 equities and indices,GME,xyz,,,,none
+xyz:GOLD,HIP-3,HIP-3 commodities and FX,GOLD,xyz,,,,internal: other HIP-3 deployer
+xyz:GOOGL,HIP-3,HIP-3 equities and indices,GOOGL,xyz,partial:GOOGLUSDT,partial:GOOGLUSDT,,"external, part of the period"
+xyz:HIMS,HIP-3,HIP-3 equities and indices,HIMS,xyz,,,,none
+xyz:HOOD,HIP-3,HIP-3 equities and indices,HOOD,xyz,partial:HOODUSDT,partial:HOODUSDT,,"external, part of the period"
+xyz:HYUNDAI,HIP-3,HIP-3 equities and indices,HYUNDAI,xyz,,,,none
+xyz:INTC,HIP-3,HIP-3 equities and indices,INTC,xyz,partial:INTCUSDT,partial:INTCUSDT,,"external, part of the period"
+xyz:JP225,HIP-3,HIP-3 equities and indices,JP225,xyz,,,,none
+xyz:JPY,HIP-3,HIP-3 commodities and FX,JPY,xyz,,,,none
+xyz:LITE,HIP-3,HIP-3 equities and indices,LITE,xyz,partial:LITEUSDT,partial:LITEUSDT,,"external, part of the period"
+xyz:LLY,HIP-3,HIP-3 equities and indices,LLY,xyz,,partial:LLYUSDT,,"external, part of the period"
+xyz:META,HIP-3,HIP-3 equities and indices,META,xyz,partial:METAUSDT,partial:METAUSDT,,"external, part of the period"
+xyz:MRVL,HIP-3,HIP-3 equities and indices,MRVL,xyz,partial:MRVLUSDT,partial:MRVLUSDT,,"external, part of the period"
+xyz:MSFT,HIP-3,HIP-3 equities and indices,MSFT,xyz,partial:MSFTUSDT,partial:MSFTUSDT,,"external, part of the period"
+xyz:MSTR,HIP-3,HIP-3 equities and indices,MSTR,xyz,partial:MSTRUSDT,partial:MSTRUSDT,,"external, part of the period"
+xyz:MU,HIP-3,HIP-3 equities and indices,MU,xyz,partial:MUUSDT,partial:MUUSDT,,"external, part of the period"
+xyz:NATGAS,HIP-3,HIP-3 commodities and FX,NATGAS,xyz,partial:NATGASUSDT,,,"external, part of the period"
+xyz:NFLX,HIP-3,HIP-3 equities and indices,NFLX,xyz,,,,none
+xyz:NVDA,HIP-3,HIP-3 equities and indices,NVDA,xyz,partial:NVDAUSDT,partial:NVDAUSDT,,"external, part of the period"
+xyz:ORCL,HIP-3,HIP-3 equities and indices,ORCL,xyz,partial:ORCLUSDT,partial:ORCLUSDT,,"external, part of the period"
+xyz:PALLADIUM,HIP-3,HIP-3 commodities and FX,PALLADIUM,xyz,,,,internal: other HIP-3 deployer
+xyz:PLATINUM,HIP-3,HIP-3 commodities and FX,PLATINUM,xyz,,,,internal: other HIP-3 deployer
+xyz:PLTR,HIP-3,HIP-3 equities and indices,PLTR,xyz,partial:PLTRUSDT,partial:PLTRUSDT,,"external, part of the period"
+xyz:PURRDAT,HIP-3,HIP-3 equities and indices,PURRDAT,xyz,,,,none
+xyz:RIVN,HIP-3,HIP-3 equities and indices,RIVN,xyz,,,,none
+xyz:RKLB,HIP-3,HIP-3 equities and indices,RKLB,xyz,,,,none
+xyz:SILVER,HIP-3,HIP-3 commodities and FX,SILVER,xyz,,,,internal: other HIP-3 deployer
+xyz:SKHX,HIP-3,HIP-3 equities and indices,SKHX,xyz,,,,none
+xyz:SMSN,HIP-3,HIP-3 equities and indices,SMSN,xyz,,,,none
+xyz:SNDK,HIP-3,HIP-3 equities and indices,SNDK,xyz,partial:SNDKUSDT,partial:SNDKUSDT,,"external, part of the period"
+xyz:SP500,HIP-3,HIP-3 equities and indices,SP500,xyz,,,,none
+xyz:SPCX,HIP-3,HIP-3 equities and indices,SPCX,xyz,,,,none
+xyz:TSLA,HIP-3,HIP-3 equities and indices,TSLA,xyz,partial:TSLAUSDT,partial:TSLAUSDT,,"external, part of the period"
+xyz:TSM,HIP-3,HIP-3 equities and indices,TSM,xyz,partial:TSMUSDT,partial:TSMUSDT,,"external, part of the period"
+xyz:URNM,HIP-3,HIP-3 equities and indices,URNM,xyz,,,,none
+xyz:USAR,HIP-3,HIP-3 equities and indices,USAR,xyz,partial:USARUSDT,,,"external, part of the period"
+xyz:XLE,HIP-3,HIP-3 equities and indices,XLE,xyz,,,,none
+xyz:XYZ100,HIP-3,HIP-3 equities and indices,XYZ100,xyz,,,,none
+xyz:ZM,HIP-3,HIP-3 equities and indices,ZM,xyz,,,,none
